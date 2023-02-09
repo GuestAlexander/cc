@@ -1,22 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Planeteer() {
+function Planeteer(props) {
+  const [figs, setFigs] = useState(true);
+  const { planties } = props;
+
   return (
-    <li className="cards__item">
+    <li className="cardsitem">
       <div className="card">
         <img
-          src={"RENDER IMAGE"}
-          alt={"RENDER PERSON NAME"}
-          className="card__image"
+          src={planet.pictureUrl}
+          alt={planet.name}
+          className="cardimage"
+          onClick={() => setFigs(!flag)}
         />
-        <div className="card__content">
-          <div className="card__title">{"RENDER NAME"}</div>
-          <p className="card__text">{"CONDITIONALLY RENDER BIO OR QUOTE"}</p>
-          <div className="card__detail">
-            <p>{"RENDER TWITTER HANDLE"}</p>
+        <div className="cardcontent">
+          <div className="cardtitle">{planties.name}</div>
+          <p className="cardtext"></p>
+          <div className="carddetail">
+            <p>{planet.twitter}</p>
             <p>
               {
-                "CONDITIONALLY RENDER WHETHER THE PERSON IS USA-BASED OR WORKING OVERSEAS"
+               planet.fromUSA ? "USA-based" : "Working overseas" 
               }
             </p>
           </div>
