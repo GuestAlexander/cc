@@ -7,8 +7,8 @@ function PlaneteersContainer(props) {
   return (
     <ul className="cards">
       {
-        list.map((planet, index) => (
-          <Planeteer key={planet.id} planet={planet} />
+        list.map((planties, index) => (
+          <Planeteer key={planties.id} planties={planties} />
         ))
       }
     </ul>

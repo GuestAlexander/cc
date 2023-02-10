@@ -6,15 +6,14 @@ import PlaneteersContainer from "./PlaneteersContainer";
 import db from "../data/db.json"
 
 function App() {
-  console.log("db", db);
+  
   const [list, setList] = useState(db.planeteers);
 
   const onSearch = (search) => {
     console.log("search", search);
 
-    // filter the list
-    const filtered = db.planeteers.filter((planet) => {
-      return planet.name.toLowerCase().includes(search.toLowerCase()) || planet.bio.toLowerCase().includes(search.toLowerCase());
+       const filtered = db.planeteers.filter((planties) => {
+      return planties.name.toLowerCase().includes(search.toLowerCase()) || planties.bio.toLowerCase().includes(search.toLowerCase());
     });
 
     setList(filtered);
@@ -23,7 +22,7 @@ function App() {
   return (
     <div>
       <Header />
-      <onSearch={onSearch}/>
+      <onSearch onSearch={onSearch}/>
       <RandomButton />
       <PlaneteersContainer list={list} />
     </div>

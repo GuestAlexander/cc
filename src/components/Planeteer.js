@@ -8,19 +8,19 @@ function Planeteer(props) {
     <li className="cardsitem">
       <div className="card">
         <img
-          src={planet.pictureUrl}
-          alt={planet.name}
+          src={planties.pictureUrl}
+          alt={planties.name}
           className="cardimage"
-          onClick={() => setFigs(!flag)}
+          onClick={() => setFigs(!figs)}
         />
         <div className="cardcontent">
           <div className="cardtitle">{planties.name}</div>
-          <p className="cardtext"></p>
+          <p className="cardtext"> {planties.bio}</p>
           <div className="carddetail">
-            <p>{planet.twitter}</p>
+            <p>{planties.twitter}</p>
             <p>
               {
-               planet.fromUSA ? "USA-based" : "Working overseas" 
+               planties.fromUSA ? "USA-based" : "Working overseas" 
               }
             </p>
           </div>
